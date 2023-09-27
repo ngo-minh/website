@@ -70,8 +70,8 @@
     <div class="button-container">
         <button class="button" onclick="location.href='index.html'">Home</button>
         <button class="button" onclick="location.href='projects.html'">Projects</button>
-        <button class="button" onclick="location.href='resume.pdf'" target="_blank">Resume</button>
-        <button class="button" onclick="location.href='#contact'">Contact</button>
+        <button class="button" onclick="location.href='resume.html'" target="_blank">Resume</button>
+        <button class="button" onclick="location.href='contact.html'">Contact</button>
     </div>
     <div class="container">
         <!-- Your projects content can go here -->
