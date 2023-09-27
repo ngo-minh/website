@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minh Ngo - Home</title>
+    <title>Minh Ngo - Projects</title>
     <style>
         /* Global Styles */
         body {
@@ -12,7 +12,7 @@
             padding: 0;
             text-align: center;
             background-image: url('background.jpg'); /* Add your background image URL here */
-            background-size: cover; /* Cover the entire page with the background image */
+            background-size: cover; /* Zoom out background image to cover the entire page */
             background-attachment: fixed; /* Fix the background image */
             background-color: #f0f0f0; /* Fallback background color */
         }
@@ -35,129 +35,15 @@
         header p {
             color: #fff; /* White text color for the p element */
         }
-        /* About Styles */
-        .about-container {
-            display: flex; /* Use flexbox for layout */
-            /* background-color: #FFFFFF; Remove this line to make the background transparent */
-            padding: 20px;
-            height: 800px; /* Set a fixed height for the content box (2x the previous height) */
-            overflow: hidden; /* Hide any overflow content */
-            margin: 0; /* Remove margin to extend to the edges */
-            width: 100%; /* Set the width to 100% to extend to the edges */
-        }
-        .about h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        /* Image Styles */
-       .profile-image {
-    max-width: 33.33%;
-    height: auto;
-    margin: auto;
-    margin-left: auto
-    display: block;
-    border: 0px solid #051A2F; /* Updated to super dark navy blue border color */
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    animation: slideIn 1s ease-in-out forwards;
-    transition: transform 0.5s ease-in-out;
-    position: relative;
-}
-
-        /* Add this CSS for the pulsating border animation */
-        .profile-image::before {
-            content: "";
-            position: absolute;
-            top: -6px;
-            left: -6px;
-            right: -6px;
-            bottom: -6px;
-            border: 0px solid transparent;
-            border-radius: 26px;
-            animation: pulse 5s linear infinite;
-        }
-
-        @keyframes slideIn {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                border-color: rgba(102, 102, 102, 0.5);
-            }
-            50% {
-                border-color: rgba(102, 102, 102, 5);
-            }
-            100% {
-                border-color: rgba(102, 102, 102, 2);
-            }
-        }
-
-        /* Contact Styles */
-        .contact {
-            background-color: #051A2F; /* Dark background color */
-            color: #E0E8EB; /* White text color */
-            padding: 20px;
-        }
-        .contact p {
-            margin: 0;
-        }
-
-        /* Animated Text-Box Styles */
-        .animated-text-box {
-            background-color: #061E37; /* Light gray background color for the text box */
-            border: 5px solid #061E37; /* Dark gray border */
-            padding: 20px;
-            text-align: center;
-            width: 400px; /* Fixed width */
-            height: 300px; /* Fixed height */
-            white-space: pre-line; /* Preserve line breaks in the text */
-            overflow-y: auto; /* Add vertical scroll if needed */
-            /* Center the text box horizontally */
-            margin: 0 auto;
-            /* Center the text box vertically */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* Move the text box down by adding margin-top */
-            margin-top: 250px; /* Adjust this value as needed */
-            margin-left: 100px; /* Adjust as needed */
-            border-radius: 20px;
-            animation: flyIn 1s ease-in-out forwards; /* Add animation for flying in */
-	    color: #E0E8EB; /* Text color */
-        }
-
-        /* Keyframes for flying in */
-        @keyframes flyIn {
-            0% {
-                transform: translateX(100%); /* Start from the right */
-                opacity: 0; /* Start with opacity 0 */
-            }
-            100% {
-                transform: translateX(0); /* Move to the original position */
-                opacity: 1; /* Fade in with full opacity */
-            }
-        }
-
-        /* Adjust the padding and line height for compactness */
-        .about-text {
-            line-height: 1.5; /* Reduce line height for compactness */
-            flex: 1; /* Allow the text to expand and fill the available space */
-        }
 
         /* Button Styles */
-       .button-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-}
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
 
         .button {
             margin-right: 10px;
@@ -184,39 +70,13 @@
     <div class="button-container">
         <button class="button" onclick="location.href='index.html'">Home</button>
         <button class="button" onclick="location.href='projects.html'">Projects</button>
-        <button class="button" onclick="location.href='#contact'">Contact</button>
+        <button class="button" onclick="location.href='resume.html'" target="_blank">Resume</button>
+        <button class="button" onclick="location.href='contact.html'">Contact</button>
     </div>
     <div class="container">
-        <div class="about-container">
-            <!-- Add the hover effect to the image -->
-            <img src="headshot.png" alt="Minh Ngo" class="profile-image">
-            <!-- Add an animated text-box for the About Me paragraph -->
-            <div class="animated-text-box">
-                <h2>About Me</h2>
-                <div id="about-me-text"></div>
-            </div>
-        </div>
+        <!-- Your projects content can go here -->
+        <h1>My Projects</h1>
+        <p>Add information and links to your projects here.</p>
     </div>
-    <script>
-        function typeText(targetId, text, delay = 50) {
-            const targetElement = document.getElementById(targetId);
-            let index = 0;
-
-            function type() {
-                if (index < text.length) {
-                    targetElement.innerHTML += text.charAt(index);
-                    index++;
-                    setTimeout(type, delay);
-                }
-            }
-
-            type();
-        }
-
-        // Call the function with your "About Me" text
-        typeText("about-me-text", "I am a dedicated undergraduate specializing in data science, equipped with a robust skill set encompassing MySQL, Power BI, and Microsoft Excel. My academic background includes extensive coursework in statistical analysis and data visualization. With strong problem-solving capabilities, I would be a valuable asset as an intern in a data analysis team, aiming to make a meaningful contribution to your organization.", 20);
-    </script>
 </body>
 </html>
-
-
